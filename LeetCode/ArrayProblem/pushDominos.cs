@@ -157,7 +157,7 @@ namespace LeetCode.ArrayProblem
                 index++;
             }
 
-            return String.Join("", rtn.ToArray());
+            return string.Join("", rtn.ToArray());
         }
     }
 }

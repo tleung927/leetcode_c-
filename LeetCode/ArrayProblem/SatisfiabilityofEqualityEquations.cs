@@ -90,7 +90,7 @@ namespace LeetCode.ArrayProblem
             {
                 if (el[i].Contains("!="))
                 {
-                    List<String> chkList = el[i].Split("!=").ToList<String>();
+                    List<string> chkList = el[i].Split("!=").ToList<string>();
                     foreach (DictionaryEntry l in ht)
                     {
                         if (ContainsAllItems((List<string>)l.Value, chkList))

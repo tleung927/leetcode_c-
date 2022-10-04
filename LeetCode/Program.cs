@@ -1,4 +1,5 @@
 ﻿using LeetCode.ArrayProblem;
+using LeetCode.TreeProblem;
 using LeetCode.String;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace LeetCode
 {
-    class Start
+    class Start : PreDefindDataStruct
     {
         static void Main(string[] args)
         {
@@ -22,7 +23,12 @@ namespace LeetCode
                 b,
                 c,
             };
-            Console.WriteLine(JsonSerializer.Serialize(validSoduku.exec(d)));
+
+            object[] arr = { 5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1 };
+            Tree.Node t2 = new Tree.Node(arr);
+
+            Console.WriteLine(JsonSerializer.Serialize(PathSum.exec(t2, 26)));
         }
     }
 }
+
