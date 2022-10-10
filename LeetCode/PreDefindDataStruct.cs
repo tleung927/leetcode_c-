@@ -6,63 +6,47 @@ namespace LeetCode
 {
     public abstract class PreDefindDataStruct
     {
-        // create tree class from ojbect array 
-        public class Tree
+        public class TreeNode
         {
-            public Tree(object[] arr)
-            {                
-                this.root = this.insertLevelOrder(arr, 0);
-                this.inOrder(this.root);
+            public int val;
+            public TreeNode left;
+            public TreeNode right;
+            public TreeNode root;
+
+            public TreeNode(object[] array)
+            {
+                this.root = arrayToTree(array, 0);
             }
 
-            public Node root;
-
-            // Tree Node
-            public class Node
+            public TreeNode()
             {
-                public int val;
-                public Node left, right;
-                public Node(int val)
-                {
-                    this.val = val;
-                    this.left = null;
-                    this.right = null;
-                }
+
             }
 
-            // Function to insert nodes in level order
-            public Node insertLevelOrder(object[] arr, int i)
+            public TreeNode(int val)
             {
-                Node root = null;
-                // Base case for recursion
-                if (i < arr.Length)
-                {
-                    if (arr[i] != null)
-                    {
-                        root = new Node(Convert.ToInt32(arr[i]));
-
-                        // insert left child
-                        root.left = insertLevelOrder(arr, 2 * i + 1);
-
-                        // insert right child
-                        root.right = insertLevelOrder(arr, 2 * i + 2);
-                    }
-
-
-
-                }
-                return root;
+                this.val = val;
             }
 
-            // Function to print tree
-            // nodes in InOrder fashion
-            public void inOrder(Node root)
+            public TreeNode(int val, TreeNode left, TreeNode right)
             {
-                if (root != null)
-                {
-                    inOrder(root.left);
-                    inOrder(root.right);
-                }
+                this.val = val;
+                this.left = left;
+                this.right = right;
+            }
+
+            public static TreeNode arrayToTree(object[] array)
+            {
+                return arrayToTree(array, 0);
+            }
+
+            public static TreeNode arrayToTree(object[] array, int index)
+            {
+                if (index >= array.Length)
+                    return null;
+                if (array[index] == null)
+                    return null;
+                return new TreeNode(Convert.ToInt32(array[index]), arrayToTree(array, index * 2 + 1), arrayToTree(array, index * 2 + 2));
             }
         }
     }

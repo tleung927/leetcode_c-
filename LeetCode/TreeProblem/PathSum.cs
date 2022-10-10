@@ -53,7 +53,7 @@ namespace LeetCode.TreeProblem
 {
     class PathSum : PreDefindDataStruct
     {
-        public static Boolean exec(Tree.Node root, int targetSum)
+        public static Boolean exec(TreeNode root, int targetSum)
         {
             if (root == null) return false;
 
@@ -63,7 +63,7 @@ namespace LeetCode.TreeProblem
                 || exec(root.right, targetSum - root.val);
         }
 
-        private static Boolean treverTree(Tree.Node self,int tmpSum, int targetSum)
+        private static Boolean treverTree(TreeNode self,int tmpSum, int targetSum)
         {
             if (self.left != null)
             {

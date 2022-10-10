@@ -24,10 +24,10 @@ namespace LeetCode
             //    c,
             //};
 
-            //object[] arr = { 5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1 };
-            //Tree.Node t2 = new Tree.Node(arr);
-
-            Console.WriteLine(JsonSerializer.Serialize(findNBitString.exec(4,11)));
+            object[] arr = { 1 };
+            TreeNode t2 = new TreeNode(arr);            
+            
+            Console.WriteLine(JsonSerializer.Serialize(findTarget.exec(t2.root,1)));
         }
     }
 }
