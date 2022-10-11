@@ -1,5 +1,6 @@
 ﻿using LeetCode.ArrayProblem;
 using LeetCode.TreeProblem;
+using LeetCode.Intervals;
 using LeetCode.String;
 using System;
 using System.Collections.Generic;
@@ -24,10 +25,10 @@ namespace LeetCode
             //    c,
             //};
 
-            object[] arr = { 1 };
+            object[] arr = { 1, 2, 2, 3, 3, null, null, 4, 4 };
             TreeNode t2 = new TreeNode(arr);            
             
-            Console.WriteLine(JsonSerializer.Serialize(findTarget.exec(t2.root,1)));
+            Console.WriteLine(JsonSerializer.Serialize(IncreasingTriplet.exec(new int[]{4, 5, 2147483647, 1, 2})));
         }
     }
 }
