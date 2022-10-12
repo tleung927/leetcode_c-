@@ -26,9 +26,9 @@ namespace LeetCode
             //};
 
             object[] arr = { 1, 2, 2, 3, 3, null, null, 4, 4 };
-            TreeNode t2 = new TreeNode(arr);            
-            
-            Console.WriteLine(JsonSerializer.Serialize(IncreasingTriplet.exec(new int[]{4, 5, 2147483647, 1, 2})));
+            TreeNode t2 = new TreeNode(arr);
+
+            Console.WriteLine(JsonSerializer.Serialize(LargestPerimeter.exec(new int[] { [100000, 100000, 3, 4, 5, 6, 7, 8, 1, 999]})));
         }
     }
 }
