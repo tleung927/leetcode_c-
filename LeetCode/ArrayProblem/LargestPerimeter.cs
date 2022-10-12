@@ -46,20 +46,40 @@ namespace LeetCode.ArrayProblem
         public static int exec(int[] nums)
         {
             List<int> n = nums.ToList();
-            n = n.OrderByDescending(num=>num).ToList();
-            int len = n[0];
-            int wid = n[1];
-            int i = 2;
-            while(i < n.Count)
+            n = n.OrderByDescending(num => num).ToList();
+            int fst = 0;
+            int sec = 0;
+            int thr = 0;
+            for (int i = 0; i < n.Count; i++)
             {
-                if(n[i] + wid > len)
+                if (sec + thr > fst)
                 {
-                    return n[i] + wid + len;
+                    return sec + thr + fst;
                 }
-                i++;
+                else if (fst != 0 && sec != 0 && thr != 0)
+                {
+                    fst = sec;
+                    sec = thr;
+                    thr = 0;
+                }
+
+                if (n[i] > fst)
+                {
+                    fst = n[i];
+                }
+                else if (n[i] > sec)
+                {
+                    sec = n[i];
+                }
+                else if (n[i] > thr)
+                {
+                    thr = n[i];
+                }
             }
-            
-            return 0;
+
+
+
+            return thr + sec > fst ? fst + sec + thr : 0;
         }
     }
 }
