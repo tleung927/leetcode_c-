@@ -49,5 +49,18 @@ namespace LeetCode
                 return new TreeNode(Convert.ToInt32(array[index]), arrayToTree(array, index * 2 + 1), arrayToTree(array, index * 2 + 2));
             }
         }
+
+        public class ListNode
+        {
+            public int val;
+            public ListNode next;
+            public ListNode(int x) { val = x; }           
+
+            public ListNode(int[] arr)
+            {
+                
+               
+            }
+        }
     }
 }
